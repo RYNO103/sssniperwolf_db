@@ -2,12 +2,17 @@ import sqlite3
 import pandas as pd
 import streamlit as st
 
-con = sqlite3.connect("wolf.db")
-cur = con.cursor()
 
-st.write("Search for SSSniperWolf quote:")
+st.set_page_config(
+    page_title="SSSniperWolf-DB"
+)
+
+st.write("Search SSSniperWolf quote:")
 
 search = st.text_input("")
+
+con = sqlite3.connect("wolf.db")
+cur = con.cursor()
 
 if search:
     rows = cur.execute("SELECT id, title, upload_date, timestamp, transcript "
