@@ -21,7 +21,7 @@ if search:
     # The underscore character (unicode codepoint 96).
     # The substitute character (unicode codepoint 26).
     filtered_search = ''.join(letter for letter in search if letter.isalnum() or
-                      letter == 96 or letter == 26)
+                      letter == 96 or letter == 26 or letter == " ")
 
     search_data = (filtered_search,)
     rows = cur.execute("SELECT id, title, upload_date, timestamp, transcript "
