@@ -33,7 +33,7 @@ if search:
     df = pd.DataFrame(rows, columns=["Video ID", "Video Title", "Upload Date",
                                      "Timestamp (Minutes)", "Transcript"])
     df = df.sort_values(["Upload Date", "Timestamp (Minutes)"],
-                        ascending=[False, True]).reset_index()
+                        ascending=[False, True]).reset_index(drop=True)
 
     st.write('Found ' + str(len(df)) + ' occurrences.')
 
