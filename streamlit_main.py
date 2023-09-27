@@ -11,7 +11,7 @@ search = st.text_input("")
 
 if search:
     rows = cur.execute("SELECT id, title, upload_date, timestamp, transcript "
-                       "FROM (SELECT * FROM vtranscripts WHERE transcript "
+                       "FROM (SELECT * FROM transcripts WHERE transcript "
                        "MATCH ?) INNER JOIN videos ON "
                        "video_id = videos.id",
                        [search]).fetchall()
